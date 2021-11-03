@@ -1,0 +1,41 @@
+.titulo-jogo{
+    display:flex;
+    justify-content: center;
+    margin: 40px 0;
+    color: #75B79E;
+}
+
+.mesa-cartas{
+    display:flex;
+    justify-content: center;  
+}
+
+.carta{
+    background-color: #A7E9AF;
+    width: 117px;
+    height: 146px;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    margin:34px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    box-sizing: border-box;
+}
+
+.carta figure{
+    width: 100px;
+    height: 100px;
+}
+
+.carta figure img{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background-color: #EEF9BF;
+    font-family: "roboto";
+    font-weight: 700;
+}
