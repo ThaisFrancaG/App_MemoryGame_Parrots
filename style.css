@@ -24,10 +24,12 @@
     box-sizing: border-box;
 }
 .verso{
-    display: none;
+    /* display: flex; */
+    display:none;
 }
 .frente {
-    display:flex;
+    display: flex;
+    /* display:none; */
 }
 .carta figure{
     width: 100px;
