@@ -6,8 +6,14 @@
 }
 
 .mesa-cartas{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
     display:flex;
     justify-content: center;  
+    flex-wrap:wrap;
+    background-color:palevioletred;
+
 }
 
 .carta{
@@ -20,9 +26,18 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    
     box-sizing: border-box;
+
+    transition: all 1s;
+    
 }
+
+/* transition makes the transform smoother */
+
+.carta-giro{
+   transform:rotateY(180deg);
+}
+
 .verso{
     /* display: flex; */
     display:none;
@@ -30,6 +45,13 @@
 .frente {
     display: flex;
     /* display:none; */
+}
+
+.carta-giro .verso{
+    transform:rotateY(180deg);
+}
+.carta-giro .frente{
+    transform:rotateY(-180deg);
 }
 .carta figure{
     width: 100px;
