@@ -7,7 +7,7 @@
 // }
 
 numeroCartas = 4;
-
+relogio();
 //pegar as opcoes possiveis de verso para construir as cartas
 let numeroDeVersos = [];
 let numeroVerso = [];
@@ -90,7 +90,6 @@ setTimeout(function(){
         parCartas[1].querySelector(".verso").style.display = "none";
         parCartas[1].querySelector(".frente").style.display = "flex";
     
-
     }
 
     parCartas[0].classList.remove("selecionada");
@@ -124,4 +123,40 @@ function fimDoJogo(){
     }
     console.log(numeroCartas);
         console.log(numeroDePares);
+}
+
+// let idInterval;
+
+function relogio(){
+
+let contadorSegundos= 0; 
+let contadorMinutos= 0; 
+let contadorHoras= 0; 
+
+ setInterval(function(){
+contadorSegundos++;
+// console.log(contadorSegundos);
+if(contadorSegundos<10){
+document.querySelector('#segundos').innerHTML = `0${contadorSegundos}`;}
+else{document.querySelector('#segundos').innerHTML = contadorSegundos;}
+
+if(contadorSegundos ==59){
+    contadorSegundos =0;
+    contadorMinutos++;
+    if(contadorMinutos<10){
+        document.querySelector('#minutos').innerHTML = `0${contadorMinutos}`;}
+        else{document.querySelector('#minutos').innerHTML = contadorMinutos;}
+}
+if(contadorMinutos ==59 && contadorSegundos ==59){
+    contadorMinutos =0;
+    contadorSegundos = 0;
+    contadorHoras++;
+    if(contadorHoras<10){
+        document.querySelector('#horas').innerHTML = `0${contadorHoras}`;}
+        else{document.querySelector('#horas').innerHTML = contadorHoras;}
+}
+},10)
+
+
+
 }

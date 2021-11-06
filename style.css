@@ -40,18 +40,18 @@
 }
 
 .verso{
-    display: hidden;
+    display: none;
     position:absolute;
     /* backface-visibility: hidden; */
     transform-style: preserve-3d;
-    transform: rotateY(180deg);
+    /* transform: rotateY(180deg); */
 }
 .frente {
     display: flex;
     position:absolute;
     /* backface-visibility: hidden; */
     transform-style: preserve-3d;
-    transform: rotateY(-180deg);
+    /* transform: rotateY(-180deg); */
 }
 
 
