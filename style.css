@@ -27,8 +27,9 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-
+    position: relative;
     transition: all 1s;
+    /* backface-visibility: hidden; */
     
 }
 
@@ -39,20 +40,21 @@
 }
 
 .verso{
-    /* display: flex; */
-    display:none;
+    display: hidden;
+    position:absolute;
+    /* backface-visibility: hidden; */
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
 }
 .frente {
     display: flex;
-    /* display:none; */
+    position:absolute;
+    /* backface-visibility: hidden; */
+    transform-style: preserve-3d;
+    transform: rotateY(-180deg);
 }
 
-.carta-giro .verso{
-    transform:rotateY(180deg);
-}
-.carta-giro .frente{
-    transform:rotateY(-180deg);
-}
+
 .carta figure{
     width: 100px;
     height: 100px;

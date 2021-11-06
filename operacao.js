@@ -84,10 +84,12 @@ setTimeout(function(){
     }
     else{
         // alert('voce nao tem um par');
+
         parCartas[0].querySelector(".frente").style.display = "flex";
         parCartas[0].querySelector(".verso").style.display = "none";
         parCartas[1].querySelector(".verso").style.display = "none";
         parCartas[1].querySelector(".frente").style.display = "flex";
+    
 
     }
 
