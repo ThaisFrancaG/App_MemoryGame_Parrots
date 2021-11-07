@@ -17,6 +17,7 @@
 
 .carta{
     background-color: #A7E9AF;
+    box-shadow: 5px 2px 5px 2px #a2cea7;
     width: 117px;
     height: 146px;
     border: 1px solid #99CEA8;
@@ -43,6 +44,7 @@
 }
 .verso{
     transform: rotateY(-180deg);
+    
 }
 .carta figure{
     width: 100px;
@@ -60,6 +62,7 @@
     color: #75B79E;
     
 }
+
 body{
     background-color: #EEF9BF;
     font-family: "roboto";

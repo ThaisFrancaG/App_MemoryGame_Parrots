@@ -25,17 +25,33 @@ for (let i=0;i<(numeroCartas/2);i++){
 let contadorCartas = 0;
 
 while (contadorCartas<numeroCartas){
-
+// pokemon, (des)comente essa parte para mudar o tema do jogo!
+tema = "pokemon";
     let mesa = document.querySelector(".mesa-cartas");
     mesa.innerHTML +=` <div data-identifier="card" class = "carta" onclick = "virarCarta(this)">
     <figure class = "frente" data-identifier="front-face">
-         <img src="imagens/front.png"/>
+         <img src="imagens/front_pokemon.png"/>
      </figure>
      <figure class = "verso" data-identifier="back-face">
-         <img src="imagens/verso${numeroVerso[contadorCartas]}.png"/>
+         <img src="imagens/pokemon/verso${numeroVerso[contadorCartas]}.png"/>
      </figure>
         </div>`;
-        contadorCartas++                                     
+        contadorCartas++    
+
+//slack     (des)comente essa parte para mudar o tema do jogo!
+
+// tema  = slack;
+        // let mesa = document.querySelector(".mesa-cartas");
+        // mesa.innerHTML +=` <div data-identifier="card" class = "carta" onclick = "virarCarta(this)">
+        // <figure class = "frente" data-identifier="front-face">
+        //      <img src="imagens/front.png"/>
+        //  </figure>
+        //  <figure class = "verso" data-identifier="back-face">
+        //      <img src="imagens/slack/verso (${numeroVerso[contadorCartas]}).gif"/>
+        //  </figure>
+        //     </div>`;
+        //     contadorCartas++        
+         
 }
 
 
