@@ -64,7 +64,13 @@
     width: 100%;
     height: 100%;
 }
-
+.relogio{
+    display:flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    color: #75B79E;
+    
+}
 body{
     background-color: #EEF9BF;
     font-family: "roboto";

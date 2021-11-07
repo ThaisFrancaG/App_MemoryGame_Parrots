@@ -7,11 +7,11 @@
 // }
 
 numeroCartas = 4;
-relogio();
+let myVar = setInterval(contadorRelogio, 1000);
+
 //pegar as opcoes possiveis de verso para construir as cartas
 let numeroDeVersos = [];
 let numeroVerso = [];
-
 
 for (let i=0;i<(numeroCartas/2);i++){
     numeroDeVersos.push(i+1);
@@ -114,26 +114,22 @@ setTimeout(function(){
 
 }
 
+
 function fimDoJogo(){
     numeroDePares = document.querySelectorAll(".par").length;
     if (numeroDePares==numeroCartas){
-        alert (`você ganhou em ${viradas} jogadas!`);
-
-        
+        pararRelogio();
+        alert (`você ganhou em ${viradas} jogadas! Você jogou por ${tempo} segundos` );
     }
-    console.log(numeroCartas);
-        console.log(numeroDePares);
 }
 
-// let idInterval;
-
-function relogio(){
 
 let contadorSegundos= 0; 
 let contadorMinutos= 0; 
 let contadorHoras= 0; 
-
- setInterval(function(){
+let tempo = 0;
+function contadorRelogio() {
+tempo++;
 contadorSegundos++;
 // console.log(contadorSegundos);
 if(contadorSegundos<10){
@@ -155,8 +151,9 @@ if(contadorMinutos ==59 && contadorSegundos ==59){
         document.querySelector('#horas').innerHTML = `0${contadorHoras}`;}
         else{document.querySelector('#horas').innerHTML = contadorHoras;}
 }
-},10)
-
-
-
 }
+
+function pararRelogio(){
+    clearInterval (myVar);
+}
+
