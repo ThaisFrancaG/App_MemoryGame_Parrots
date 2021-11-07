@@ -5,7 +5,6 @@ while (numeroCartas<4 || numeroCartas>14 || numeroCartas%2 !==0) {
     numeroCartas = prompt('Insira um número par de 4 a 14!');
 }
 
-
 let myVar = setInterval(contadorRelogio, 1000);
 
 //pegar as opcoes possiveis de verso para construir as cartas
@@ -21,9 +20,7 @@ for (let i=0;i<(numeroCartas/2);i++){
     function comparador(){
         return Math.random() - 0.5; 
     }
-
 }
-
 
 let contadorCartas = 0;
 
@@ -31,10 +28,10 @@ while (contadorCartas<numeroCartas){
 
     let mesa = document.querySelector(".mesa-cartas");
     mesa.innerHTML +=` <div data-identifier="card" class = "carta" onclick = "virarCarta(this)">
-    <figure class = "frente">
+    <figure class = "frente" data-identifier="front-face">
          <img src="imagens/front.png"/>
      </figure>
-     <figure class = "verso">
+     <figure class = "verso" data-identifier="back-face">
          <img src="imagens/verso${numeroVerso[contadorCartas]}.png"/>
      </figure>
         </div>`;
@@ -48,50 +45,56 @@ let numeroDePares = 0;
 
 function virarCarta(carta){
 
-    if (parCartas.length<2){
+if (parCartas.length<2){
 
-        if (carta.querySelector(".par") == null){
-
-    carta.classList.toggle("carta-giro");
-    carta.querySelector(".frente").style.display = "none";
-    carta.querySelector(".verso").style.display = "flex";
-    carta.classList.add("selecionada");
-
+    carta.classList.toggle("giro");
+    carta.classList.add("selecionada"); 
     parCartas.push(carta);
+    carta.setAttribute("onclick",'teste(this)');
     conferenciaPares = document.querySelectorAll(".selecionada").length;
-  
-    if(conferenciaPares==2){
+
+    if(conferenciaPares==2) {
+
+        if(parCartas[0]==parCartas[1]){
+            alert("aff");
+            parCartas = [];
+        }
+else{
 
     setTimeout(function(){
     if(parCartas[0].querySelector(".verso").innerHTML === parCartas[1].querySelector(".verso").innerHTML){
-        // alert('você tem um par');
     parCartas[0].classList.add("par");
     parCartas[1].classList.add("par");
+    parCartas[0].removeAttribute("onclick");
+    parCartas[1].removeAttribute("onclick");
+  
     }
     else{
-
-        parCartas[0].querySelector(".frente").style.display = "flex";
-        parCartas[0].querySelector(".verso").style.display = "none";
-        parCartas[1].querySelector(".verso").style.display = "none";
-        parCartas[1].querySelector(".frente").style.display = "flex";
+        parCartas[0].classList.toggle("giro");
+        parCartas[1].classList.toggle("giro");
+        parCartas[0].setAttribute("onclick",'virarCarta(this)');
+        parCartas[1].setAttribute("onclick",'virarCarta(this)');
     }
     parCartas[0].classList.remove("selecionada");
     parCartas[1].classList.remove("selecionada");
     parCartas = [];
     conferenciaPares =0;
     fimDoJogo()
-  
+
     },1000);
+}
+
     }
-    viradas++;
-    
-}}
-   
+    viradas++; 
+}
+ 
     else{
         alert ("Aguarde antes de clicar novamente!");
 }
-
+console.log(parCartas);
 }
+    
+
 
 function fimDoJogo(){
     numeroDePares = document.querySelectorAll(".par").length;
@@ -102,7 +105,7 @@ function fimDoJogo(){
        if (reiniciar == "sim"){
            location.reload();
        } 
-       else{prompt("obrigado por jogar!");}
+       else{alert("obrigado por jogar!");}
     }
 }
 
@@ -139,3 +142,6 @@ function pararRelogio(){
     clearInterval (myVar);
 }
 
+function teste(){
+    alert("Opa, você já selecionou essa carta");
+}

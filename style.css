@@ -12,7 +12,6 @@
     display:flex;
     justify-content: center;  
     flex-wrap:wrap;
-    background-color:palevioletred;
 
 }
 
@@ -28,33 +27,23 @@
     align-items: center;
     box-sizing: border-box;
     position: relative;
-    transition: all 1s;
-    /* backface-visibility: hidden; */
+    transform-style: preserve-3d;
+    transition: all .4s;
+    
     
 }
 
-/* transition makes the transform smoother */
-
-.carta-giro{
-   transform:rotateY(180deg);
+.frente, .verso{
+    position: absolute;
+    backface-visibility: hidden;
 }
 
+.carta.giro{
+    transform: rotateY(180deg);
+}
 .verso{
-    display: none;
-    position:absolute;
-    /* backface-visibility: hidden; */
-    transform-style: preserve-3d;
-    /* transform: rotateY(180deg); */
+    transform: rotateY(-180deg);
 }
-.frente {
-    display: flex;
-    position:absolute;
-    /* backface-visibility: hidden; */
-    transform-style: preserve-3d;
-    /* transform: rotateY(-180deg); */
-}
-
-
 .carta figure{
     width: 100px;
     height: 100px;
