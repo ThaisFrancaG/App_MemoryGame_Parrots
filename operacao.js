@@ -18,19 +18,7 @@ for (let i=0;i<(numeroCartas/2);i++){
     }
 
 while (contadorCartas<numeroCartas){
-//pokemon   (des)comente essa parte para mudar o tema do jogo!
-    // let mesa = document.querySelector(".mesa-cartas");
-    // mesa.innerHTML +=` <div data-identifier="card" class = "carta" onclick = "virarCarta(this)">
-    // <figure class = "frente" data-identifier="front-face">
-    //      <img src="imagens/front_pokemon.png"/>
-    //  </figure>
-    //  <figure class = "verso" data-identifier="back-face">
-    //      <img src="imagens/pokemon/verso${numeroVerso[contadorCartas]}.png"/>
-    //  </figure>
-    //     </div>`;
-    //     contadorCartas++    
-
-//slack     (des)comente essa parte para mudar o tema do jogo!
+ 
         let mesa = document.querySelector(".mesa-cartas");
         mesa.innerHTML +=` <div data-identifier="card" class = "carta" onclick = "virarCarta(this)">
         <figure class = "frente" data-identifier="front-face">
@@ -105,7 +93,7 @@ let contadorSegundos= 0, contadorMinutos= 0, contadorHoras= 0, tempo = 0;
 function contadorRelogio() {
 tempo++;
 contadorSegundos++;
-// console.log(contadorSegundos);
+
 if(contadorSegundos<10){
 document.querySelector('#segundos').innerHTML = `0${contadorSegundos}`;}
 else{document.querySelector('#segundos').innerHTML = contadorSegundos;}
