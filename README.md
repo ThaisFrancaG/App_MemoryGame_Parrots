@@ -1,7 +1,7 @@
 # Parrots: Um Jogo Da Memória
 
 <figure align:center>
-<img src = "imagens/images_frente.svg">
+<img src = "imagens/imagem_frente.svg">
 </figure>
 
 ## Qual a lógica?
@@ -11,7 +11,7 @@ A ideia é bem auto-explicativa: um joguinho da memória on-line! As regras são
 ## Como Usar?
 
 A forma mais direta é ir direto no link:
-<a>https://projeto-driven-track-it.vercel.app/</a>
+<a>https://thaisfrancag.github.io/App_MemoryGame_Parrots/</a>
 
 Mas, se quiser ver melhor as funcionalidade e o código em si, você também pode baixar o repositório para sua máquina, através dos seguintes passos:
 
